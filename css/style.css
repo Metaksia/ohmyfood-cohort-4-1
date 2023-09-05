@@ -1,3 +1,4 @@
+/* Preloader */
 .lds-ring {
     display: inline-block;
     position: relative;
@@ -58,7 +59,7 @@
         opacity: 0;
     }
 }
-
+/* General Styles */
 html, body {
     max-width: 100%;
     overflow-x: hidden;
@@ -66,17 +67,28 @@ html, body {
     padding: 0; 
 }
 
+body{
+    font-family: Roboto, sans-serif;
+}
 
 #header_logo {
     padding: 15px 0; 
     text-align: center;
 }
 
+#header_logo i {
+    color: #353535;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+   font-size: large;
+  }
+
 #header_logo img{
     margin: 10px 0; 
 }
 
-  
+/* Location Section Styles */
 .location {
     background: #e7e3e3;
     display: flex;
@@ -124,6 +136,7 @@ html, body {
     margin: 10px 15px; 
 }
 
+/* button at index page */
 #bookingButton {
     color: white;
     border: none;
@@ -137,11 +150,18 @@ html, body {
     box-shadow: 0px 4px 4px 4px #e0e0e0;
     transition: 0.3s ease-in-out;
 }
+
+#bookingButton:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.03);
+    box-shadow: 0px 6px 6px 6px #c9c8c8;
+    background: linear-gradient(#f78ed9 , #9c6fd3);
+}
   
 .info {
     margin: 40px;
 } 
-
+/* Button Styles */
 .rounded-button {
     position: relative;
     background-color: #f3f2f2;
@@ -169,7 +189,7 @@ html, body {
     align-items: center; 
 }
 
-.button_text{
+.bt_text{
     font-weight: bold;
     margin: 0px 0 0 30px;
     white-space: nowrap;
@@ -177,7 +197,7 @@ html, body {
     text-overflow: ellipsis;
 }
 
-.button_text i{
+.bt_text i{
     color: #7e7e7e;
     margin-right: 20px;
     font-size: 19px;
@@ -270,15 +290,25 @@ html, body {
     -webkit-text-stroke: 1px black;
     width: 30px;
     text-align: center;
-}
-  
-.fa-heart:hover {
-    background:  linear-gradient(#fd71d6 , #894fd1);
-    animation: fill 1s both;
-    -webkit-background-clip: text;
-    -webkit-text-stroke: 0;
+    transition: background 0.5s linear; 
 }
 
+/* heart animation */
+.fa-heart:hover {
+    background:  linear-gradient(#fd71d6 , #894fd1);
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 0;
+    animation: fillBackground 2s both;
+}
+
+@keyframes fillBackground {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
   
   footer {
     background-color: #353535;
@@ -291,7 +321,8 @@ html, body {
     color: white;
     font-size: 18px
   }
-  
+
+/* footer styles */
 #footer_ul {
     list-style: none;
   }
@@ -313,7 +344,7 @@ html, body {
   
 
   
-
+/* Responsive Styles */
 @media (max-width: 768px) {
     #logo {
         width: 200px;
@@ -372,7 +403,7 @@ html, body {
     }
 }
 
-
+/* image at restaurant menus styles */
 .food1 {
     height: 180px;
 }
@@ -411,7 +442,9 @@ html, body {
 .main_menu {
     display: flex;
     flex-direction: column;
+    margin: -10px 15px 0 15px;
 }
+
 
 .main_menu .main_dish {
     border-bottom: 2px solid #8fd8c6;
@@ -434,7 +467,7 @@ html, body {
     display: flex;
     flex-direction: column;
 }
-  
+/* Styles for menu item animation containers */
 .animation_area {
     display: flex;
     border-radius: 25px;
@@ -442,23 +475,44 @@ html, body {
     background-color: white;
     box-shadow: 0px 4px 5px 3px #dbdbdb;
     animation: fadein 1s both;
+    overflow: hidden;
 }
   
 .header_category {
     width: 100%;
     margin: -10px 20px -10px 10px;
 } 
+
+.header_category h3{
+    font-size: 17px;
+} 
  
 .details_menu {
     display: flex; 
     justify-content: space-between;
-    margin-top: -35px;
-  }
+    margin-top: -30px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+  
+   
+}
+
+.details_menu p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    font-size: 14px;
+   
+   
+}
   
 .details_menu2 {
     font-weight: bold;
 }
 
+/* Animation delay for specific menu items */
 .animation_area--1 {
     animation-delay: 0.3s;
 }
@@ -523,7 +577,13 @@ html, body {
     border-radius: 25px;
     background: linear-gradient(#fd71d6 , #894fd1);
     box-shadow: 0px 4px 4px 4px #e0e0e0;
+}
+
+#orderButton:hover {
     transition: 0.3s ease-in-out;
+    transform: scale(1.03);
+    box-shadow: 0px 6px 6px 6px #c9c8c8;
+    background: linear-gradient(#f78ed9 , #9c6fd3);
 }
 
 
@@ -543,7 +603,8 @@ html, body {
     color: white;
     margin-top: 20px;
 }
-   
+ 
+/* animation for the menus  */
 @keyframes slideout {
     0% {
       margin-right: 0px;
